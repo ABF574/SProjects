@@ -1,0 +1,210 @@
+[FileInfo]
+FileName=Arduino_UNO.eds
+FileVersion=1.2
+FileRevision=1.2
+Description=EDS for CANopen Arduino with Knob and LED control
+CreationTime=2:30PM
+CreationDate=02-08-2025
+CreatedBy=Arduino
+
+[DeviceInfo]
+VendorName=Arduino
+VendorNumber=1
+ProductName=Arduino Uno
+ProductNumber=1
+SimpleBootUpMaster=0
+SimpleBootUpSlave=1
+NrOfRXPDO=1
+NrOfTXPDO=1
+
+[MandatoryObjects]
+SupportedObjects=3
+1=0x1000
+2=0x1001
+3=0x1018
+
+[1000]
+ParameterName=Device Type
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+
+[1001]
+ParameterName=Error Register
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=0x00
+
+[1018]
+SubNumber=4
+ParameterName=Identity Object
+ObjectType=0x9
+
+[1018sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=4
+
+[1018sub1]
+ParameterName=Vendor ID
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+
+[1018sub2]
+ParameterName=Product Code
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000000
+
+[1018sub3]
+ParameterName=Revision Number
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x00000001
+
+[OptionalObjects]
+SupportedObjects=5
+1=0x1200
+2=0x1800
+3=0x1A00
+4=0x1400
+5=0x1600
+
+[1200]
+SubNumber=2
+ParameterName=Server SDO Parameter
+ObjectType=0x9
+
+[1200sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+
+[1200sub1]
+ParameterName=COB-ID Client to Server
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x601
+
+[1200sub2]
+ParameterName=COB-ID Server to Client
+ObjectType=0x7
+DataType=0x0007
+AccessType=ro
+DefaultValue=0x581
+
+[1800]
+SubNumber=2
+ParameterName=TPDO1 Communication Parameter
+ObjectType=0x9
+
+[1800sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+
+[1800sub1]
+ParameterName=COB-ID used by TPDO1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x181
+
+[1800sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+
+[1A00]
+SubNumber=1
+ParameterName=TPDO1 Mapping Parameter
+ObjectType=0x9
+
+[1A00sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+
+[1A00sub1]
+ParameterName=TPDO1 Mapping Entry 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x21000008
+
+[1400]
+SubNumber=2
+ParameterName=RPDO1 Communication Parameter
+ObjectType=0x9
+
+[1400sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=ro
+DefaultValue=2
+
+[1400sub1]
+ParameterName=COB-ID used by RPDO1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x201
+
+[1400sub2]
+ParameterName=Transmission Type
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=255
+
+[1600]
+SubNumber=1
+ParameterName=RPDO1 Mapping Parameter
+ObjectType=0x9
+
+[1600sub0]
+ParameterName=Number of Entries
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=1
+
+[1600sub1]
+ParameterName=RPDO1 Mapping Entry 1
+ObjectType=0x7
+DataType=0x0007
+AccessType=rw
+DefaultValue=0x21010008
+
+[2100]
+ParameterName=Knob Angle
+ObjectType=0x7
+DataType=0x0006
+AccessType=ro
+PDOMapping=1
+
+[2101]
+ParameterName=LED Control
+ObjectType=0x7
+DataType=0x0005
+AccessType=rw
+DefaultValue=0
+PDOMapping=1
