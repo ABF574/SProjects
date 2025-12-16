@@ -1,0 +1,7 @@
+This Python script is used with a Siemens S7-1200 PLC and a Siemens Comfort Panel HMI. The purpose is to make a backup file of the audit trail exported from the HMI file system as a CSV file, analyze it and make a report with the key events. The script does not modify the PLC or the HMI in any way.
+
+The script runs on a PC with access to the HMI’s SMB share folder. When it’s executed, it first creates a timestamped backup of the exported audit CSV file. This guarantees that the original data is preserved and cannot be overwritten, and the backup keeps the original file information and allows historical tracking of audit data.
+
+After the backup is created, the script reads the CSV file exported and is parsed and converted into a structured event that includes the date and time of the action, the user who performed it, the type of action, the affected object, and any old or new values when applicable.
+
+The script then analyzes the audit events and puts it in a .TXT file by counting the total number of events, access performed by engineering users, and parameter change actions. This makes it easier to review if there were configuration changes and engineering access without manually inspecting the file.
